@@ -593,6 +593,16 @@
             document.getElementById('dateModal').classList.add('hidden');
         }
     </script>
+    <script>
+    // 서비스 워커 정식 등록 (sw.js 연동)
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log('PWA Service Worker Registered'))
+            .catch((err) => console.log('SW Register Error:', err));
+    }
+
+    // (이 아래 기존 가계부 자바스크립트 코드들은 그대로 두시면 됩니다!)
+</script>
 
 </body>
 </html>
